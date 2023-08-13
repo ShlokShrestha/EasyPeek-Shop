@@ -56,7 +56,7 @@ const Home = () => {
         </div>
         <div className=" container mx-auto mb-16">
           <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[20px] max-w-sm px-5 md:max-w-none md:mx-0 mx-auto py-2 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[20px] max-w-sm px-3 md:max-w-none md:mx-0 mx-auto py-2 
           "
           >
             {filterSearch.map((product) => (

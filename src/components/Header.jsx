@@ -13,6 +13,7 @@ const Header = () => {
   const {
     state: { cart },
   } = CartState();
+  const [active, setActive] = useState("");
   return (
     <>
       <div
@@ -22,27 +23,56 @@ const Header = () => {
       >
         <Link to="/" className="text-xl font-semibold z-10">
           <div>
-            <img src="/img/trendhub-icon.png" alt="" className="w-16 " />
+            <img
+              src="/img/trendhub-icon.png"
+              alt=""
+              className={`${active === "home" ? "text-green-600" : ""} w-16 `}
+              onClick={() => setActive("home")}
+            />
           </div>
         </Link>
 
         <ul
-          className={`mx-auto text-lg md:flex text-center mt-3 md:top-0 md:justify-center md: my-auto absolute left-0 w-full  bg-white transition-all duration-1000 cursor-pointer z-1 ${
+          className={`mx-auto text-lg md:flex text-center mt-3 md:top-0 md:justify-center md: my-auto absolute left-0 w-full font-medium bg-white transition-all duration-1000 cursor-pointer z-1 ${
             mode ? "top-12" : "top-[-400px]"
           }`}
         >
-          <li className="p-3">
-            <Link to="/">Home </Link>
+          <li
+            className={`${
+              active === "home" ? "text-green-600" : ""
+            } p-3 hover:text-green-600`}
+          >
+            <Link to="/" onClick={() => setActive("home")}>
+              Home{" "}
+            </Link>
           </li>
-          <li className="p-3">
-            <Link to="/productpage">Product</Link>
+          <li
+            className={`${
+              active === "product" ? "text-green-600" : ""
+            } p-3 hover:text-green-600`}
+          >
+            <Link to="/productpage" onClick={() => setActive("product")}>
+              Product
+            </Link>
           </li>
 
-          <li className="p-3">
-            <Link to="/about">About</Link>
+          <li
+            className={`${
+              active === "about" ? "text-green-600" : ""
+            } p-3 hover:text-green-600`}
+          >
+            <Link to="/about" onClick={() => setActive("about")}>
+              About
+            </Link>
           </li>
-          <li className="p-3">
-            <Link to="/contact">Contact</Link>
+          <li
+            className={`${
+              active === "contact" ? "text-green-600" : ""
+            } p-3 hover:text-green-600`}
+          >
+            <Link to="/contact" onClick={() => setActive("contact")}>
+              Contact
+            </Link>
           </li>
         </ul>
 
